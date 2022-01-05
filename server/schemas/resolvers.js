@@ -35,13 +35,20 @@ const resolvers ={
       const token = signToken(user);
       return {token, user}
     },
-    saveBook : async (parents, {_id, book}) =>{
+    saveBook : async (parents, {book}, context) =>{
+      if(!context.auth_user) {
+        return null
+      }
+    
       const updatedUserWithSavedBooks = await User.findOneAndUpdate(
-        {_id},
+        
+        {_id: context.auth_user._id},
         {$push :{savedBooks : book}},
         {new: true}
       );
+   
       return updatedUserWithSavedBooks
+      
     },
     removeBook : async (parents, {_id, bookId}) =>{
       const updatedUserwithRemovedBook = await User.findOneAndUpdate(
