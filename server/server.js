@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-app.use(routes);
+// app.use(routes);
 
 db.once('open', async () => {
   await server.start()
