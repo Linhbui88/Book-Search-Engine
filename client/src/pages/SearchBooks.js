@@ -38,6 +38,7 @@ const SearchBooks = () => {
       }
 
       const { items } = await response.json();
+   
 
       const bookData = items.map((book) => ({
         bookId: book.id,
@@ -46,7 +47,7 @@ const SearchBooks = () => {
         description: book.volumeInfo.description,
         image: book.volumeInfo.imageLinks?.thumbnail || '',
       }));
-
+     
       setSearchedBooks(bookData);
       setSearchInput('');
     } catch (err) {

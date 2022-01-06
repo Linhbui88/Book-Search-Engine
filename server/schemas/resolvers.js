@@ -50,10 +50,15 @@ const resolvers ={
       return updatedUserWithSavedBooks
       
     },
-    removeBook : async (parents, {_id, bookId}) =>{
+    removeBook : async (parents, {bookId}, context) =>{
+      if(!context.auth_user) {
+        return null
+      }
+      
       const updatedUserwithRemovedBook = await User.findOneAndUpdate(
-        {_id},
-        {$pull :{savedBooks : bookId}}
+        {_id :context.auth_user._id},
+        {$pull :{savedBooks : {bookId}}},
+        {new: true}
       );
       return updatedUserwithRemovedBook
     }
