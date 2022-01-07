@@ -41,7 +41,7 @@ This app helps user to be able to log in to the user's account with autheticatio
 
 
 ## Deployed application link
-Live Deployed Allication: [View Application](https://linh-workout-tracker.herokuapp.com/)<br/>
+Live Deployed Allication: [View Application](https://linh-book-search-engine.herokuapp.com/)<br/>
 
 
 ## Languages
