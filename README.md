@@ -46,7 +46,7 @@ Live Deployed Allication: [View Application](https://linh-book-search-engine.her
 
 ## Languages
 
-JavaScript, Node, Express, Mongoose, MongoDB, GrapghQL, React<br />
+JavaScript, Node, Express, Mongoose, MongoDB, GraphQL, React<br />
 
 ## License
 
